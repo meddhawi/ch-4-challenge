@@ -10,6 +10,8 @@ const scissorBackCom = document.getElementById('scissorBack-com');
 const versus = document.getElementById('versus') //to remove VS sign
 const resultBox = document.getElementById('result-box') //to show result sign
 
+var Enabled = true;
+
 //generate choices 
 function compChoice(){
     const comp = Math.random();
@@ -51,9 +53,9 @@ function gameResult(player, comp){
     }
 }
 
-//If player lose
+//If player lose, win, and Draw
 function lose(){
-    console.log("COM WIN!")
+    console.log("COM WIN!") //consolo.log is for debugging to make sure code works
     setTimeout(function(){
         resultBox.style.display = 'block';
         versus.style.display = 'none';
@@ -79,7 +81,6 @@ function draw(){
     },600)
 }
 
-var Enabled = true;
 
 //if player choose rock
 const playerRock = document.getElementById('rock'); //take the input
@@ -88,12 +89,12 @@ playerRock.addEventListener('click', function(){
     if(Enabled == true){ //no overlap choice
         const playerAction = playerRock.id;
         const compAction = compChoice();
-        gameResult(playerAction, compAction);
+        gameResult(playerAction, compAction); //get result 
         
-        rockBack.style.background = "#C4C4C4";
+        rockBack.style.background = "#C4C4C4"; //state that we choice Rock
         rockBack.style.borderRadius = '30px';
 
-        console.log('comp :' + compAction);
+        console.log('comp :' + compAction); //this is for debugging in case of error
         console.log("p :" + playerAction);
         
         Enabled = false;
@@ -102,7 +103,7 @@ playerRock.addEventListener('click', function(){
 })
 
 //if player choose paper
-const playerPaper = document.getElementById('paper'); //take the input
+const playerPaper = document.getElementById('paper'); 
 playerPaper.addEventListener('click', function(){
 
     if(Enabled == true){
@@ -122,7 +123,7 @@ playerPaper.addEventListener('click', function(){
 })
 
 //if player choose scissor
-const playerScissor = document.getElementById('scissor'); //take the input
+const playerScissor = document.getElementById('scissor');
 playerScissor.addEventListener('click', function(){
     if(Enabled == true){
         const compAction = compChoice();
