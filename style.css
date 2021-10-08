@@ -46,10 +46,10 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-.image-box:hover{
+/* .image-box:hover{
     background-color: #C4C4C4;
     border-radius: 30px;
-}
+} */
 
 .image-box-2{
     height: 25vmin;
@@ -57,7 +57,7 @@ body{
     padding: 4vmin;
     margin-left: auto;
     margin-right: auto;
-    background-color: #C4C4C4;
+    /* background-color: #C4C4C4; */
     border-radius: 30px;
 }
 
